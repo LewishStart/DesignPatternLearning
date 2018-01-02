@@ -29,7 +29,7 @@ public class Client {
          * 封装一下
          */
         IGamePlayer gamePlayer = new GamePlayer("Lewish");
-        IGamePlayer proxy = new DynamicProxy<IGamePlayer>().bind(gamePlayer);
+        IGamePlayer proxy = new GamePlayerProxy<IGamePlayer>().bind(gamePlayer);
         System.out.println("-----游戏开始-----");
         proxy.login("Lewish","pwd");
         proxy.killBoss();
